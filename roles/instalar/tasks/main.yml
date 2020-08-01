@@ -6,7 +6,7 @@
 #  tags: packages:apt-update
 
 - name: Instala base
-  pacman:
+  package:
     name: "{{ instalar_base }}"
     state: latest
     update_cache: yes # sempre atualizar o cache
@@ -21,7 +21,7 @@
   tags: instalar:base
 
 - name: Instala util
-  pacman:
+  package:
     name: "{{ instalar_util }}"
     state: latest
     update_cache: yes # sempre atualizar o cache
@@ -40,7 +40,7 @@
   
 
 - name: Instala fancy
-  pacman:
+  package:
     name: "{{ instalar_fancy }}"
     state: latest
     update_cache: yes # sempre atualizar o cache
@@ -57,7 +57,7 @@
   tags: instalar:fancy
 
 - name: Instala dev
-  pacman:
+  package:
     name: "{{ instalar_dev }}"
     state: latest
     update_cache: yes # sempre atualizar o cache
@@ -65,7 +65,7 @@
   tags: instalar:dev
 
 - name: Instala DevOps
-  pacman:
+  package:
     name: "{{ instalar_devops }}"
     state: latest
     update_cache: yes
