@@ -33,7 +33,7 @@ $ ./scripts/update-requirements.sh
 Feito isso, execute o playbook:
 
 ```console
-$ ansible-playbook -b -K -c local -i inventory.ini playbooks/master.yml
+ansible-playbook -K -c local -i inventory.ini playbooks/master.yml
 ```
 
 Observe que:
