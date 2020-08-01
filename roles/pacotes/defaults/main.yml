@@ -28,6 +28,10 @@ pacotes_fancy:
 pacotes_dev:
   - code
 
+pacotes_devops:
+  - docker
+  - terraform
+
 #gemas_fancy:
 #  - colorls
 
