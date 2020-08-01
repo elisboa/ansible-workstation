@@ -5,17 +5,19 @@
 #    cache_valid_time: 3600
 #  tags: packages:apt-update
 
-- name: Instala pacotes básicos
+- name: Instala pacotes base
   pacman:
     name: "{{ pacotes_base }}"
     state: latest
     update_cache: yes # sempre atualizar o cache
+  become: yes
   tags: pacotes:base
 
-- name: Provisiona projetos básicos via git
+- name: Provisiona projetos base via git
   git:
     repo: 'https://github.com/elisboa/linux-time-machine.sh.git'
     dest: /opt/git/linux-time-machine.sh
+  become: yes
   tags: pacotes:base
 
 - name: Instala pacotes úteis
@@ -23,14 +25,16 @@
     name: "{{ pacotes_util }}"
     state: latest
     update_cache: yes # sempre atualizar o cache
+  become: yes
   tags: pacotes:util
 
 - name: Instala pacotes úteis via PIP
   pip:
-    name: speedtest-cli    
+    name: speedtest-cli
+  become: yes
   tags: pacotes:util
 
-- name: Instala pacotes úteis manualmente
+- name: Instala pacotes úteis manualmente via yay
   command: yay -S --noconfirm authy-snap
   tags: pacotes:util
   
@@ -40,10 +44,15 @@
     name: "{{ pacotes_fancy }}"
     state: latest
     update_cache: yes # sempre atualizar o cache
+  become: yes
   tags: pacotes:fancy
 
-- name: Instala pacotes fancy manualmente
+- name: Instala pacotes fancy manualmente - ruby gems
   command: gem install colorls
+  become: yes
+  tags: pacotes:fancy
+
+- name: Instala pacotes fancy manualmente - yay
   command: yay -S --noconfirm nerd-fonts-fantasque-sans-mono
   tags: pacotes:fancy
 
@@ -52,6 +61,7 @@
     name: "{{ pacotes_dev }}"
     state: latest
     update_cache: yes # sempre atualizar o cache
+  become: yes
   tags: pacotes:dev
 
 - name: Instala pacotes DevOps
@@ -59,11 +69,13 @@
     name: "{{ pacotes_devops }}"
     state: latest
     update_cache: yes
+  become: yes
   tags: pacotes:devops
 
 - name: Instala pacotes DevOps via AWS CLI
   pip:
     name: awscli
+  become: yes
   tags: pacotes:devops
 
 #- name: Instala gemas fancy
