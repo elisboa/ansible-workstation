@@ -16,13 +16,17 @@ pacotes_base:
 pacotes_util:
   - arandr
   - bashtop
+  - htop
   - flameshot
   - vim
   - tmux
-  - terminator 
+  - terminator
 
 pacotes_fancy:
   - bat
+
+pacotes_dev:
+  - code
 
 #gemas_fancy:
 #  - colorls
