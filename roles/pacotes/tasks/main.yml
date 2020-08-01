@@ -1,9 +1,9 @@
 ---
-- name: Atualiza cache do APT
-  apt:
-    update_cache: true
-    cache_valid_time: 3600
-  tags: packages:apt-update
+#- name: Atualiza cache do APT
+#  apt:
+#    update_cache: true
+#    cache_valid_time: 3600
+#  tags: packages:apt-update
 
 - name: Instala pacotes básicos
   pacman:
