@@ -3,7 +3,7 @@
 - name: zshrc
   get_url:
     url: https://raw.githubusercontent.com/elisboa/rcfiles/master/.zshrc
-    dest: "/home/elisboa/.zshrc"
+    dest: "~/.zshrc"
     backup: yes
     force: yes
     mode: '0664'
@@ -12,7 +12,7 @@
 - name: vimrc
   get_url:
     url: https://raw.githubusercontent.com/elisboa/rcfiles/master/.vimrc
-    dest: "/home/elisboa/.vimrc"
+    dest: "~/.vimrc"
     backup: yes
     force: yes
     mode: '0664'
@@ -21,7 +21,7 @@
 - name: tmux conf
   get_url:
     url: https://raw.githubusercontent.com/elisboa/rcfiles/master/.tmux.conf
-    dest: "/home/elisboa/.tmux.conf"
+    dest: "~/.tmux.conf"
     backup: yes
     force: yes
     mode: '0664'
@@ -31,9 +31,8 @@
 - name: ssh user config
   get_url:
     url: https://raw.githubusercontent.com/elisboa/rcfiles/master/ssh/config
-    dest: "/home/elisboa/.ssh/config"
+    dest: "~/.ssh/config"
     backup: yes
     force: yes
     mode: '0600'
   tags: configurar:base:ssh
-
