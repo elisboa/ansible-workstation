@@ -1,6 +1,9 @@
 ---
 - name: Workstation - Base System
   hosts: all
+  vars:
+    HOME:
+    - "{{ lookup('env','HOME') }}"
 
   roles:
     - role: configurar
