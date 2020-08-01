@@ -1,11 +1,11 @@
 ---
-# Variáveis "packages_*": listas de instalar independentes e/ou que são dependências de
+# Variáveis "packages_*": listas de configurar independentes e/ou que são dependências de
 # várias aplicações simultaneamente. Vários provavelmente já estarão instalados,
 # mas não custa documentá-los.
 
-# Nota: os instalar são instalados com *no-install-recommends*!
+# Nota: os configurar são instalados com *no-install-recommends*!
 
-instalar_base:
+configurar_base:
   - zsh
   - wget
   - curl
@@ -13,7 +13,7 @@ instalar_base:
   - openssh
   - ruby
   
-instalar_util:
+configurar_util:
   - arandr
   - bashtop
   - htop
@@ -22,13 +22,13 @@ instalar_util:
   - tmux
   - terminator
 
-instalar_fancy:
+configurar_fancy:
   - bat
 
-instalar_dev:
+configurar_dev:
   - code
 
-instalar_devops:
+configurar_devops:
   - docker
   - terraform
 
