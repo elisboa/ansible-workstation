@@ -1,7 +1,39 @@
 ---
-- name: Configura ZSH RC
+
+- name: zshrc
   get_url:
-    url: https://github.com/elisboa/rcfiles/blob/master/.zshrc
-    dest: {{ lookup('env','HOME') }}"/.zshrc"
+    url: https://raw.githubusercontent.com/elisboa/rcfiles/master/.zshrc
+    dest: "/home/elisboa/.zshrc"
+    backup: yes
+    force: yes
     mode: '0664'
-    tags: configurar:base
+  tags: configurar:base:zsh
+
+- name: vimrc
+  get_url:
+    url: https://raw.githubusercontent.com/elisboa/rcfiles/master/.vimrc
+    dest: "/home/elisboa/.vimrc"
+    backup: yes
+    force: yes
+    mode: '0664'
+  tags: configurar:base:vimrc
+
+- name: tmux conf
+  get_url:
+    url: https://raw.githubusercontent.com/elisboa/rcfiles/master/.tmux.conf
+    dest: "/home/elisboa/.tmux.conf"
+    backup: yes
+    force: yes
+    mode: '0664'
+  tags: configurar:base:zsh
+
+
+- name: ssh user config
+  get_url:
+    url: https://raw.githubusercontent.com/elisboa/rcfiles/master/ssh/config
+    dest: "/home/elisboa/.ssh/config"
+    backup: yes
+    force: yes
+    mode: '0600'
+  tags: configurar:base:ssh
+
