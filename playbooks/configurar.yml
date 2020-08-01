@@ -3,6 +3,6 @@
   hosts: all
 
   roles:
-    - role: instalar
-      tags: instalar
+    - role: configurar
+      tags: configurar
 
