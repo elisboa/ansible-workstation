@@ -11,6 +11,7 @@ pacotes_base:
   - curl
   - git
   - openssh
+  - ruby
   
 pacotes_util:
   - arandr
@@ -19,6 +20,12 @@ pacotes_util:
   - vim
   - tmux
   - terminator 
+
+pacotes_fancy:
+  - bat
+
+#gemas_fancy:
+#  - colorls
 
 #packages_dev:
 #  - gedit
