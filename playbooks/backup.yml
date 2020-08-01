@@ -1,9 +1,0 @@
----
-- name: Workstation - Backup
-  hosts: all
-
-  roles:
-    - role: restic
-      tags: restic
-    - role: megasync
-      tags: megasync
