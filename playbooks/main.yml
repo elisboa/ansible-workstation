@@ -5,24 +5,3 @@
 
 - import_playbook: instalar.yml
   tags: instalar
-#
-#- import_playbook: chat.yml
-#  tags: chat
-#
-#- import_playbook: services.yml
-#  tags: services
-#
-#- import_playbook: infrastructure.yml
-#  tags: infrastructure
-#
-#- import_playbook: cloud-tools.yml
-#  tags: cloud-tools
-#
-#- import_playbook: development.yml
-#  tags: development
-#
-#- import_playbook: backup.yml
-#  tags: backup
-#
-#- import_playbook: utilities.yml
-#  tags: utilities
