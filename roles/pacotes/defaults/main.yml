@@ -10,8 +10,15 @@ pacotes_base:
   - wget
   - curl
   - git
-  - ansible
-  - ssh
+  - openssh
+  
+pacotes_util:
+  - arandr
+  - bashtop
+  - flameshot
+  - vim
+  - tmux
+  - terminator 
 
 #packages_dev:
 #  - gedit
