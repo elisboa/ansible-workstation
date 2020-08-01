@@ -28,9 +28,15 @@
 
 - name: Instala pacotes manualmente fancy
   command: gem install colorls
+  command: yay -S --noconfirm nerd-fonts-fantasque-sans-mono
   tags: pacotes:fancy
 
-
+- name: Instala pacotes dev
+  pacman:
+    name: "{{ pacotes_dev }}"
+    state: latest
+    update_cache: yes # sempre atualizar o cache
+  tags: pacotes:dev
 
 #- name: Instala gemas fancy
 #  gem:
