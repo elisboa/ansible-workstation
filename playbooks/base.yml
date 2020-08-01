@@ -3,11 +3,14 @@
   hosts: all
 
   roles:
-    - role: packages
-      tags: packages
-    - role: base-system
-      tags: base-system
-    - role: dotfiles
-      tags: dotfiles
-    - role: desktop
-      tags: desktop
+    - role: pacotes
+      tags: pacotes
+      
+#    - role: packages
+#      tags: packages
+#    - role: base-system
+#      tags: base-system
+#    - role: dotfiles
+#      tags: dotfiles
+#    - role: desktop
+#      tags: desktop
