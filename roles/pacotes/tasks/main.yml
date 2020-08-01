@@ -19,6 +19,25 @@
     update_cache: yes # sempre atualizar o cache
   tags: pacotes:util
 
+- name: Instala pacotes fancy
+  pacman:
+    name: "{{ pacotes_fancy }}"
+    state: latest
+    update_cache: yes # sempre atualizar o cache
+  tags: pacotes:fancy
+
+- name: Instala pacotes manualmente fancy
+  command: gem install colorls
+  tags: pacotes:fancy
+
+
+
+#- name: Instala gemas fancy
+#  gem:
+#    name: "{{ gemas_fancy }}"
+#    state: present
+#    repository: http://rubygems.org
+#  tags: gemas:fancy
 
 #- name: Instala ferramentas de desenvolvimento
 #  apt:
