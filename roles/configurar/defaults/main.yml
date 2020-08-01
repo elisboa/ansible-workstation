@@ -6,31 +6,11 @@
 # Nota: os configurar são instalados com *no-install-recommends*!
 
 configurar_base:
-  - zsh
-  - wget
-  - curl
-  - git
-  - openssh
-  - ruby
-  
+
 configurar_util:
-  - arandr
-  - bashtop
-  - htop
-  - flameshot
-  - vim
-  - tmux
-  - terminator
 
 configurar_fancy:
-  - bat
 
 configurar_dev:
-  - code
 
 configurar_devops:
-  - docker
-  - terraform
-
-#gemas_fancy:
-#  - colorls
