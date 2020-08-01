@@ -1,0 +1,79 @@
+---
+#- name: Atualiza cache do APT
+#  apt:
+#    update_cache: true
+#    cache_valid_time: 3600
+#  tags: packages:apt-update
+
+- name: Instala base
+  pacman:
+    name: "{{ instalar_base }}"
+    state: latest
+    update_cache: yes # sempre atualizar o cache
+  become: yes
+  tags: instalar:base
+
+- name: Provisiona projetos base via git
+  git:
+    repo: 'https://github.com/elisboa/linux-time-machine.sh.git'
+    dest: /opt/git/linux-time-machine.sh
+  become: yes
+  tags: instalar:base
+
+- name: Instala util
+  pacman:
+    name: "{{ instalar_util }}"
+    state: latest
+    update_cache: yes # sempre atualizar o cache
+  become: yes
+  tags: instalar:util
+
+- name: Instala util via PIP
+  pip:
+    name: speedtest-cli
+  become: yes
+  tags: instalar:util
+
+- name: Instala util manualmente via yay
+  command: yay -S --noconfirm authy-snap
+  tags: instalar:util
+  
+
+- name: Instala fancy
+  pacman:
+    name: "{{ instalar_fancy }}"
+    state: latest
+    update_cache: yes # sempre atualizar o cache
+  become: yes
+  tags: instalar:fancy
+
+- name: Instala fancy manualmente via ruby gems
+  command: gem install colorls
+  become: yes
+  tags: instalar:fancy
+
+- name: Instala fancy manualmente via yay
+  command: yay -S --noconfirm nerd-fonts-fantasque-sans-mono
+  tags: instalar:fancy
+
+- name: Instala dev
+  pacman:
+    name: "{{ instalar_dev }}"
+    state: latest
+    update_cache: yes # sempre atualizar o cache
+  become: yes
+  tags: instalar:dev
+
+- name: Instala DevOps
+  pacman:
+    name: "{{ instalar_devops }}"
+    state: latest
+    update_cache: yes
+  become: yes
+  tags: instalar:devops
+
+- name: Instala DevOps via AWS CLI
+  pip:
+    name: awscli
+  become: yes
+  tags: instalar:devops

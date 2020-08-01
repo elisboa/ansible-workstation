@@ -1,0 +1,36 @@
+---
+# Variáveis "packages_*": listas de instalar independentes e/ou que são dependências de
+# várias aplicações simultaneamente. Vários provavelmente já estarão instalados,
+# mas não custa documentá-los.
+
+# Nota: os instalar são instalados com *no-install-recommends*!
+
+instalar_base:
+  - zsh
+  - wget
+  - curl
+  - git
+  - openssh
+  - ruby
+  
+instalar_util:
+  - arandr
+  - bashtop
+  - htop
+  - flameshot
+  - vim
+  - tmux
+  - terminator
+
+instalar_fancy:
+  - bat
+
+instalar_dev:
+  - code
+
+instalar_devops:
+  - docker
+  - terraform
+
+#gemas_fancy:
+#  - colorls
