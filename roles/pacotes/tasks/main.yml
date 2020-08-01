@@ -8,10 +8,17 @@
 - name: Instala pacotes básicos
   pacman:
     name: "{{ pacotes_base }}"
-    state: present
+    state: latest
     update_cache: yes # sempre atualizar o cache
-    upgrade: yes      # sempre atualizar o pacote
   tags: pacotes:base
+
+- name: Instala pacotes úteis
+  pacman:
+    name: "{{ pacotes_util }}"
+    state: latest
+    update_cache: yes # sempre atualizar o cache
+  tags: pacotes:util
+
 
 #- name: Instala ferramentas de desenvolvimento
 #  apt:
