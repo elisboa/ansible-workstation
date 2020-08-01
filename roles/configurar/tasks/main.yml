@@ -1,1 +1,7 @@
 ---
+- name: Configura ZSH RC
+  get_url:
+    url: https://github.com/elisboa/rcfiles/blob/master/.zshrc
+    dest: {{ lookup('env','HOME') }}"/.zshrc"
+    mode: '0664'
+    tags: configurar:base
