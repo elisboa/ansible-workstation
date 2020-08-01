@@ -4,8 +4,12 @@ Playbook e roles do Ansible para provisionamento do meu computador.
 
 ## Compatibilidade
 
-As roles são desenvolvidas e testadas no **Xubuntu 18.04 (amd64)**, mas deverão
-funcionar em qualquer "flavor" e/ou versão recente do Ubuntu.
+Este projeto se dedica a provisionar um ambiente funcional e customizado a partir de uma instalação do Manjaro. O [projeto original](https://github.com/flaudisio/ansible-workstation) é desenhado para funcionar no Ubuntu e demais variações.
+
+### Mudanças e diferenças:
+* Projeto adaptado para funcionar no Manjaro
+* playbooks e tags aqui estão abordados sob um conceito diferente: poucos playbooks e muitas tags
+
 
 > **Atenção:** leia as tasks e execute com cautela. Não posso me responsabilizar
 > por eventuais problemas em seu sistema! ;)
