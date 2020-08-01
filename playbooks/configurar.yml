@@ -1,0 +1,8 @@
+---
+- name: Workstation - Base System
+  hosts: all
+
+  roles:
+    - role: instalar
+      tags: instalar
+
