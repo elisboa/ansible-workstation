@@ -12,12 +12,28 @@
     update_cache: yes # sempre atualizar o cache
   tags: pacotes:base
 
+- name: Provisiona projetos básicos via git
+  git:
+    repo: 'https://github.com/elisboa/linux-time-machine.sh.git'
+    dest: /opt/git/linux-time-machine.sh
+  tags: pacotes:base
+
 - name: Instala pacotes úteis
   pacman:
     name: "{{ pacotes_util }}"
     state: latest
     update_cache: yes # sempre atualizar o cache
   tags: pacotes:util
+
+- name: Instala pacotes úteis via PIP
+  pip:
+    name: speedtest-cli    
+  tags: pacotes:util
+
+- name: Instala pacotes úteis manualmente
+  command: yay -S --noconfirm authy-snap
+  tags: pacotes:util
+  
 
 - name: Instala pacotes fancy
   pacman:
@@ -26,7 +42,7 @@
     update_cache: yes # sempre atualizar o cache
   tags: pacotes:fancy
 
-- name: Instala pacotes manualmente fancy
+- name: Instala pacotes fancy manualmente
   command: gem install colorls
   command: yay -S --noconfirm nerd-fonts-fantasque-sans-mono
   tags: pacotes:fancy
@@ -37,6 +53,18 @@
     state: latest
     update_cache: yes # sempre atualizar o cache
   tags: pacotes:dev
+
+- name: Instala pacotes DevOps
+  pacman:
+    name: "{{ pacotes_devops }}"
+    state: latest
+    update_cache: yes
+  tags: pacotes:devops
+
+- name: Instala pacotes DevOps via AWS CLI
+  pip:
+    name: awscli
+  tags: pacotes:devops
 
 #- name: Instala gemas fancy
 #  gem:
