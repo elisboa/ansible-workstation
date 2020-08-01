@@ -27,3 +27,4 @@ pip-selfcheck.json
 
 .vscode/**
 !.vscode/settings.json
+ansible-workstation-master
