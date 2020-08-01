@@ -5,158 +5,75 @@
 #    cache_valid_time: 3600
 #  tags: packages:apt-update
 
-- name: Instala pacotes base
+- name: Instala base
   pacman:
-    name: "{{ pacotes_base }}"
+    name: "{{ instalar_base }}"
     state: latest
     update_cache: yes # sempre atualizar o cache
   become: yes
-  tags: pacotes:base
+  tags: instalar:base
 
 - name: Provisiona projetos base via git
   git:
     repo: 'https://github.com/elisboa/linux-time-machine.sh.git'
     dest: /opt/git/linux-time-machine.sh
   become: yes
-  tags: pacotes:base
+  tags: instalar:base
 
-- name: Instala pacotes úteis
+- name: Instala util
   pacman:
-    name: "{{ pacotes_util }}"
+    name: "{{ instalar_util }}"
     state: latest
     update_cache: yes # sempre atualizar o cache
   become: yes
-  tags: pacotes:util
+  tags: instalar:util
 
-- name: Instala pacotes úteis via PIP
+- name: Instala util via PIP
   pip:
     name: speedtest-cli
   become: yes
-  tags: pacotes:util
+  tags: instalar:util
 
-- name: Instala pacotes úteis manualmente via yay
+- name: Instala util manualmente via yay
   command: yay -S --noconfirm authy-snap
-  tags: pacotes:util
+  tags: instalar:util
   
 
-- name: Instala pacotes fancy
+- name: Instala fancy
   pacman:
-    name: "{{ pacotes_fancy }}"
+    name: "{{ instalar_fancy }}"
     state: latest
     update_cache: yes # sempre atualizar o cache
   become: yes
-  tags: pacotes:fancy
+  tags: instalar:fancy
 
-- name: Instala pacotes fancy manualmente - ruby gems
+- name: Instala fancy manualmente via ruby gems
   command: gem install colorls
   become: yes
-  tags: pacotes:fancy
+  tags: instalar:fancy
 
-- name: Instala pacotes fancy manualmente - yay
+- name: Instala fancy manualmente via yay
   command: yay -S --noconfirm nerd-fonts-fantasque-sans-mono
-  tags: pacotes:fancy
+  tags: instalar:fancy
 
-- name: Instala pacotes dev
+- name: Instala dev
   pacman:
-    name: "{{ pacotes_dev }}"
+    name: "{{ instalar_dev }}"
     state: latest
     update_cache: yes # sempre atualizar o cache
   become: yes
-  tags: pacotes:dev
+  tags: instalar:dev
 
-- name: Instala pacotes DevOps
+- name: Instala DevOps
   pacman:
-    name: "{{ pacotes_devops }}"
+    name: "{{ instalar_devops }}"
     state: latest
     update_cache: yes
   become: yes
-  tags: pacotes:devops
+  tags: instalar:devops
 
-- name: Instala pacotes DevOps via AWS CLI
+- name: Instala DevOps via AWS CLI
   pip:
     name: awscli
   become: yes
-  tags: pacotes:devops
-
-#- name: Instala gemas fancy
-#  gem:
-#    name: "{{ gemas_fancy }}"
-#    state: present
-#    repository: http://rubygems.org
-#  tags: gemas:fancy
-
-#- name: Instala ferramentas de desenvolvimento
-#  apt:
-#    name: "{{ packages_dev }}"
-#    state: present
-#    install_recommends: false
-#  tags: packages:dev
-#
-#- name: Instala ferramentas de administração de sistema
-#  apt:
-#    name: "{{ packages_sysadmin }}"
-#    state: present
-#    install_recommends: false
-#  tags: packages:sysadmin
-#
-#- name: Instala ferramentas de gráficos e multimídia
-#  apt:
-#    name: "{{ packages_media }}"
-#    state: present
-#    install_recommends: false
-#  tags: packages:media
-#
-#- name: Instala pacotes utilitários
-#  apt:
-#    name: "{{ packages_utils }}"
-#    state: present
-#    install_recommends: false
-#  tags: packages:utils
-#
-#- name: Remove pacotes selecionados
-#  apt:
-#    name: "{{ packages_purge }}"
-#    state: absent
-#    purge: true
-#  tags: packages:purge
-#
-#- name: Instala pacotes extras
-#  apt:
-#    name: "{{ packages_extra }}"
-#    state: present
-#    install_recommends: false
-#  tags: packages:extra
-#
-## Git (instalado à parte por usar PPA)
-#
-#- name: Habilita PPA do Git
-#  apt_repository:
-#    repo: ppa:git-core/ppa
-#    state: present
-#    update_cache: true
-#  tags:
-#    - packages:git
-#    - packages:git:ppa
-#    - packages:dev
-#
-#- name: Instala pacotes relacionados ao Git
-#  apt:
-#    name:
-#      - git
-#      - git-doc
-#      - git-gui
-#      - gitk
-#      - qgit
-#      - tig
-#    state: present
-#    install_recommends: false
-#  tags:
-#    - packages:git
-#    - packages:dev
-#
-#- name: Configura alternatives
-#  alternatives:
-#    name: editor
-#    path: /usr/bin/vim.basic
-#  tags: packages:alternatives
-#
+  tags: instalar:devops
